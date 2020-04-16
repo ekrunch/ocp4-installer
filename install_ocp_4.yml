@@ -13,5 +13,6 @@
 
   - name: Power on cluster
     import_role:
-      name: ocp4.clusterpower
+      name: ocp4.install
+      tasks_from: clusterpower
     when: "power_on_cluster_after_build and inventory_hostname in groups['bastionhost']"
